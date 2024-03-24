@@ -1,14 +1,6 @@
-FROM node:16-alpine
-
+FROM node:17-alpine
 WORKDIR /app
-
-COPY package.json .
-
-RUN npm install
-
 COPY . .
-
-EXPOSE 3000
-# required for docker desktop port mapping
-
-CMD ["npm", "start"]
+RUN npm install
+EXPOSE 5173
+CMD ["npm", "run", "dev"]

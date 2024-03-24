@@ -1,0 +1,21 @@
+version: "3"
+services:
+  api:
+    build:
+      context: ./api
+      dockerfile: Dockerfile
+    container_name: api_c
+    ports:
+      - "4000:4000"
+    volumes:
+      - ./api:/app
+  myblog:
+    build:
+      context: ./myblog
+      dockerfile: Dockerfile
+    container_name: myblog_c
+    ports:
+      - "5173:5173"
+    volumes:
+      - ./myblog:/app
+    # stdin_open: true for windows also try "tty: true with this if doesnt work"  BUT FOR MAC & LINUX USE VOLUMES
