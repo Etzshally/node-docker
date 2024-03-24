@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react'
+import { useEffect, useState,useEffect } from 'react'
 import './App.css';
 
 function App() {
@@ -12,7 +12,7 @@ function App() {
   return (
     <div className="App">
       <header className="App-header">
-        <h1>all blogs</h1>
+        <h1>all Blogs</h1>
         {blogs && blogs.map(blog => (
           <div key={blog.id}>{blog.title}</div>
         ))}
